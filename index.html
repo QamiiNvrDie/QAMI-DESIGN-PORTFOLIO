@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qami Design</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:Poppins,sans-serif;
+    background:#000;
+    color:#fff;
+    scroll-behavior:smooth;
+}
+
+/* NAVBAR */
+nav{
+    position:sticky;
+    top:0;
+    background:#000;
+    padding:15px;
+    text-align:center;
+    border-bottom:1px solid #111;
+    z-index:1000;
+}
+nav a{
+    color:#C9A227;
+    margin:0 12px;
+    text-decoration:none;
+    font-size:14px;
+    transition:0.3s;
+}
+nav a:hover{color:#fff;}
+
+/* SECTIONS */
+section{
+    padding:70px 20px;
+    max-width:1100px;
+    margin:auto;
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.8s ease;
+}
+section.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.center{text-align:center;}
+
+.hero-title{
+    font-family:Anton;
+    font-size:75px;
+    margin-bottom:25px;
+}
+
+h2{
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+p{
+    line-height:1.7;
+    color:#ddd;
+}
+
+/* BUTTON */
+.gold-btn{
+    background:#C9A227;
+    color:#000;
+    padding:12px 24px;
+    margin:8px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:600;
+    display:inline-block;
+    transition:0.3s;
+}
+.gold-btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 12px #C9A227;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+}
+.card{
+    background:#111;
+    height:170px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid #222;
+    transition:0.3s;
+}
+.card:hover{
+    transform:translateY(-8px) scale(1.03);
+    border-color:#C9A227;
+}
+
+/* FLOATING WHATSAPP */
+.whatsapp-float{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#C9A227;
+    color:#000;
+    padding:14px 16px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    box-shadow:0 0 15px rgba(0,0,0,0.5);
+    transition:0.3s;
+    z-index:999;
+}
+.whatsapp-float:hover{
+    transform:scale(1.1);
+}
+
+/* FOOTER */
+.footer{
+    text-align:center;
+    padding:40px;
+    border-top:1px solid #111;
+    color:#aaa;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+<a href="#">Home</a>
+<a href="#work">Work</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#why">Why Qami</a>
+<a href="#about">About</a>
+</nav>
+
+<!-- HERO -->
+<section class="center">
+<h1 class="hero-title">QAMI DESIGN</h1>
+<a class="gold-btn" href="#portfolio">View Portfolio</a>
+<a class="gold-btn" href="https://wa.me/923360731488">Hire Me</a>
+</section>
+
+<!-- WHAT I DO -->
+<section id="work">
+<h2>What Work I Do</h2>
+<p>Luxury minimal logo design, brand identity, social media visuals and modern branding for fashion and business brands.</p>
+</section>
+<!-- PORTFOLIO -->
+<section id="portfolio">
+<h2>Portfolio</h2>
+<div class="grid">
+
+<div class="card">
+  <img src="images/logo1.jpg" alt="Logo 1" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
+</div>
+
+<div class="card">
+  <img src="images/logo2.jpg" alt="Logo 2" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
+</div>
+
+<div class="card">
+  <img src="images/logo3.jpg" alt="Logo 3" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
+</div>
+
+<div class="card">
+  <img src="images/logo4.jpg" alt="Logo 4" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">
+</div>
+
+</div>
+
+<br>
+<a class="gold-btn" href="https://wa.me/923360731488">Contact me on WhatsApp</a>
+</section>
+<!-- WHY -->
+<section id="why">
+<h2>Why Choose Qami Design</h2>
+<p>Premium modern concepts, minimal luxury style, fast delivery and brand focused design strategy that makes your business stand out.</p>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About Us</h2>
+<p>Qami Design is a creative branding studio focused on luxury minimal logo design and fashion brand visuals. Clean design that speaks louder.</p>
+</section>
+
+<div class="footer">
+<p>© 2026 Qami Design — Luxury Branding Studio</p>
+</div>
+
+<!-- FLOATING WHATSAPP -->
+<a class="whatsapp-float" href="https://wa.me/923360731488">WhatsApp</a>
+
+<script>
+const sections=document.querySelectorAll("section");
+window.addEventListener("scroll",()=>{
+    sections.forEach(sec=>{
+        const top=sec.getBoundingClientRect().top;
+        if(top<window.innerHeight-100){
+            sec.classList.add("show");
+        }
+    });
+});
+</script>
+
+</body>
+</html>
